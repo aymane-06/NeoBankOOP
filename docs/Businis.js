@@ -18,7 +18,7 @@ tr.innerHTML=` <td class="px-4 py-2 border-b">${a.customer_id}</td>
               <td class="px-4 py-2 border-b">$${a.transaction_fee}</td>
               <td class="px-4 py-2 border-b">
                 <button onclick="showPopUp(${a.customer_id})" id="editBtn" class="editBtn bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 mr-2">Edit</button>
-                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
+                <button onclick="deleteAccount(${a.customer_id})" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
               </td>`
 
       tbody.appendChild(tr);        
@@ -59,4 +59,14 @@ async function showPopUp(id){
 function hidePopUp(event){
     let popUpModel=document.getElementById('popUp');
     popUpModel.classList.add('hidden');   
+}
+
+function deleteAccount(id){
+    fetch(`./controller/deleteAccounts.php?id=${id}`)
+    .then(res=>res.json())
+    .then(data=>
+     console.log(data),
+     window.location.reload()
+
+    )
 }
