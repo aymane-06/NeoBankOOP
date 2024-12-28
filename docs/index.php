@@ -72,4 +72,4 @@
 
       <script src="script.js"></script>
 
-<?php include('footer.php') ?>
+<?php include 'footer.php' ?>

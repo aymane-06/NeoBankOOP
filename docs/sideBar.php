@@ -15,7 +15,7 @@
             </li>
             <li>
               <a href="./showBuisnesAccount.php" class="block text-lg hover:bg-blue-700 px-4 py-2 rounded-lg">
-                Liste des Buisnes Account
+                Liste des Business Account
               </a>
             </li>
             <li>
